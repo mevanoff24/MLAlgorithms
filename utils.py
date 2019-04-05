@@ -12,6 +12,9 @@ def accuracy(y_true, y_pred):
     return np.mean(y_true == y_pred)
 
 
+def sigmoid(X):
+    return 1 / (1 + (np.exp(-X)))
+
     
 # E = - SUM{y_true * log(y_pred) + (1 - y_true) * log(1 - y_pred)}
 def cross_entropy_slow(y_true, y_pred):

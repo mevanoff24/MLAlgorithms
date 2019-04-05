@@ -1,35 +1,8 @@
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import numpy as np
-
 from utils import *
 
-
-def sigmoid(X):
-    return 1 / (1 + (np.exp(-X)))
-
-# E = - SUM{y_true * log(y_pred) + (1 - y_true) * log(1 - y_pred)}
-def cross_entropy_slow(y_true, y_pred):
-    E = 0
-    for i in range(len(y_true)):
-        if y_true[i] == 1:
-            E -= np.log(y_pred[i])
-        else:
-            E -= np.log(1 - y_pred[i])
-    return E
-
-def cross_entropy_faster(y_true, y_pred):
-    return -np.mean(y_true * np.log(y_pred) + (1 - y_true) * np.log(1 - y_pred))
-
-def cross_entropy_fastest(y_true, y_pred):
-    return -np.mean(y_true * np.log(y_pred))
-
-def accuracy(y_true, y_pred):
-    return np.mean(y_true == y_pred)
-            
-
-
-    
 class LogisticRegression(object):
     def __init__(self, learning_rate=0.001, epochs=10000, plot_costs=False):
         self.learning_rate = learning_rate
