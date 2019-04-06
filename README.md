@@ -3,7 +3,7 @@ How to code up machine learning models
 
 
 ## Current Models 
-- Logistic Regression
+- [Logistic Regression](https://github.com/mevanoff24/MLAlgorithms/blob/master/linear_model/logistic_regression.py)
 
 
 
